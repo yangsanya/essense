@@ -25,14 +25,14 @@
 
                                     <li class="title">Women's Collection</li>
                                     {% for cat in women_category %}
-                                        <li><a href="{% url 'shop_category' cat.slug %}">{{ cat.name }}</a></li>
+                                        <li><a href="{% url 'shop_subcategory' cat.slug %}">{{ cat.name }}</a></li>
                                     {% endfor %}
 
                                 </ul>
                                 <ul class="single-mega cn-col-4">
                                     <li class="title">Men's Collection</li>
                                     {% for cat in men_category %}
-                                        <li><a href="{% url 'shop_category' cat.slug %}">{{ cat.name }}</a></li>
+                                        <li><a href="{% url 'shop_subcategory' cat.slug %}">{{ cat.name }}</a></li>
                                     {% endfor %}
 
                                 </ul>
@@ -40,7 +40,7 @@
                                     <li class="title">Kid's Collection</li>
                                     {% for cat in kids_category %}
 
-                                        <li><a href="{% url 'shop_category' cat.slug %}">{{ cat.name }}</a></li>
+                                        <li><a href="{% url 'shop_subcategory' cat.slug %}">{{ cat.name }}</a></li>
                                     {% endfor %}
 
                                 </ul>
