@@ -14,7 +14,7 @@ def index(request):
     women_category = SubCategory.objects.filter(collection__name='Women')
     men_category = SubCategory.objects.filter(collection__name='Men')
     kids_category = SubCategory.objects.filter(collection__name='Kids')
-    items = Item.objects.all().reverse
+    items = Item.objects.all().reverse()
     context = {
         'women_category': women_category,
         'men_category': men_category,
@@ -39,6 +39,7 @@ class Shop(ListView):
         clothing_subcategories = SubCategory.objects.filter(category__name='Clothing')
         shoes_subcategories = SubCategory.objects.filter(category__name='Shoes')
         accessories_subcategories = SubCategory.objects.filter(category__name='Accessories')
+        categories = Category.objects.all()
         brands = Brand.objects.all()
 
         context['women_category'] = women_category
@@ -48,6 +49,7 @@ class Shop(ListView):
         context['shoes_subcategories'] = shoes_subcategories
         context['accessories_subcategories'] = accessories_subcategories
         context['brands'] = brands
+        context['categories'] = categories
 
         return context
 
@@ -58,25 +60,7 @@ class Shop(ListView):
 class ShopCategory(Shop, ListView):
 
     def get_queryset(self):
-        return Item.objects.filter(sub_category__slug=self.kwargs['slug'])
-
-
-class ShopClothingCategory(Shop, ListView):
-
-    def get_queryset(self):
-        return Item.objects.filter(category__name='Clothing')
-
-
-class ShopShoesCategory(Shop, ListView):
-
-    def get_queryset(self):
-        return Item.objects.filter(category__name='Shoes')
-
-
-class ShopAccessoriesCategory(Shop, ListView):
-
-    def get_queryset(self):
-        return Item.objects.filter(category__name='Accessories')
+        return Item.objects.filter(category__slug=self.kwargs['slug'])
 
 
 class ShopBySubCategory(Shop, ListView):
