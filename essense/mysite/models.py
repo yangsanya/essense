@@ -23,7 +23,7 @@ class Collection(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
-    collection = models.ManyToManyField(Collection)
+    collection = models.ManyToManyField(Collection, related_name='collection_category')
 
     def __str__(self):
         return self.name
