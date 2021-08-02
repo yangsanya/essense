@@ -11,7 +11,7 @@ def blog(request):
 
 
 def index(request):
-    items = Item.objects.all()
+    items = reversed(Item.objects.all()[9:])
     collections = Collection.objects.all()
     context = {
         'items': items,
@@ -44,6 +44,7 @@ class Shop(ListView):
 
 
 class ShopCategory(Shop, ListView):
+    template_name = 'essense/shop.html'
 
     def get_queryset(self):
         return Item.objects.filter(category__slug=self.kwargs['slug'])
