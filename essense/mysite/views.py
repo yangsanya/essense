@@ -6,10 +6,6 @@ from .models import *
 from .filters import *
 
 
-def blog(request):
-    return render(request, template_name='essense/blog.html')
-
-
 def index(request):
     items = reversed(Item.objects.all()[9:])
     collections = Collection.objects.all()
