@@ -123,12 +123,12 @@
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.content|safe }}</p>
 
+                {% if post.quote %}
                 <blockquote>
-                    <h6><i class="fa fa-quote-left" aria-hidden="true"></i> Quisque sagittis non ex eget vestibulum. Sed nec ultrices dui. Cras et sagittis erat. Maecenas pulvinar, turpis in dictum tincidunt, dolor nibh lacinia lacus.</h6>
-                    <span>Liam Neeson</span>
+                    <h6><i class="fa fa-quote-left" aria-hidden="true"></i>{{ post.quote }}</h6>
+                    <span>{{ post.quote_author}}</span>
                 </blockquote>
-
-                <p>Praesent ac magna sed massa euismod congue vitae vitae risus. Nulla lorem augue, mollis non est et, eleifend elementum ante. Nunc id pharetra magna. Praesent vel orci ornare, blandit mi sed, aliquet nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                {% endif %}
             </div>
 
             <!-- Related Blog Post -->
