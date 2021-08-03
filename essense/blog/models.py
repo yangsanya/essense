@@ -8,6 +8,8 @@ class Post(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     photo = models.ImageField(upload_to='blog_photos/%Y/%m/%d')
+    quote = models.CharField(max_length=255, blank=True, null=True)
+    quote_author = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.title

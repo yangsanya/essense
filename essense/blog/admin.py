@@ -22,7 +22,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'slug', 'created_at', 'get_photo')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
-    readonly_fields = ('created_at', 'get_image')
+    readonly_fields = ('created_at', 'get_photo')
     fields = ('title', 'slug', 'content', 'photo', 'get_photo', 'created_at')
 
     def get_photo(self, obj):
@@ -31,3 +31,6 @@ class PostAdmin(admin.ModelAdmin):
         return '-'
 
     get_photo.short_description = 'Image'
+
+
+admin.site.register(Post, PostAdmin)
