@@ -16,6 +16,10 @@ def index(request):
     return render(request, template_name='essense/index.html', context=context)
 
 
+def contact(request):
+    return render(request, template_name='essense/contact.html')
+
+
 class Shop(ListView):
     template_name = 'essense/shop.html'
     context_object_name = 'items'
