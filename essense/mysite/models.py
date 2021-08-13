@@ -1,7 +1,9 @@
 from django.db import models
 from django.urls import reverse
-from smart_selects.db_fields import ChainedForeignKey
+from django.contrib.auth import get_user_model
 from django.contrib.postgres.fields import ArrayField
+
+User = get_user_model()
 
 
 class Brand(models.Model):
@@ -71,3 +73,6 @@ class ItemImage(models.Model):
 
     def __str__(self):
         return self.item.name
+
+
+

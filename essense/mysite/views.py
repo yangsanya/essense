@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import View
 from django_filters.views import FilterView
+from django.http import HttpResponseRedirect
 from .models import *
 from .filters import *
 
@@ -18,6 +19,14 @@ def index(request):
 
 def contact(request):
     return render(request, template_name='essense/contact.html')
+
+
+def regular(request):
+    return render(request, template_name='essense/regular-page.html')
+
+
+def checkout(request):
+    return render(request, template_name='essense/checkout.html')
 
 
 class Shop(ListView):
@@ -103,3 +112,5 @@ class ItemDetail(DetailView):
         context['accessories_subcategories'] = accessories_subcategories
 
         return context
+
+
