@@ -112,5 +112,3 @@ class ItemDetail(DetailView):
         context['accessories_subcategories'] = accessories_subcategories
 
         return context
-
-

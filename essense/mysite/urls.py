@@ -11,6 +11,5 @@ urlpatterns = [
     path('shop/on-sale', ItemsOnSale.as_view(), name='on_sale'),
     path('shop/brand/<slug:slug>/', ShopByBrand.as_view(), name='shop_brand'),
     path('shop/<slug:slug>/', ItemDetail.as_view(), name='single_product'),
-    path('checkout', checkout, name='checkout')
-
+    path('checkout', checkout, name='checkout'),
 ]

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django_filters',
     'blog.apps.BlogConfig',
     'ckeditor',
+    'cart.apps.CartConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
