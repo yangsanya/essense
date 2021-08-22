@@ -1,0 +1,8 @@
+/venv/
+/essense/static/
+/essense/mysite/migrations/
+/essense/media/
+/essense/essense/static/
+/essense/cart/migrations/
+/essense/blog/migrations/
+/essense/account/migrations/

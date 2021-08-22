@@ -54,8 +54,8 @@
             <!-- Search Area -->
             <div class="search-area">
                 <form action="#" method="post">
-                    <input type="search" name="search" id="headerSearch" placeholder="Type for search">
-                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <input type="search" name="search" id="headerSearch" placeholder="Type for search" style="padding-left: 15px;">
+{#                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>#}
                 </form>
             </div>
             <!-- Favourite Area -->
@@ -64,7 +64,7 @@
             </div>
             <!-- User Login Info -->
             <div class="user-login-info">
-                <a href="#"><img src="{% static 'img/core-img/user.svg' %}" alt=""></a>
+                <a href="{% url 'login' %}"><img src="{% static 'img/core-img/user.svg' %}" alt=""></a>
             </div>
             <!-- Cart Area -->
             <div class="cart-area">
