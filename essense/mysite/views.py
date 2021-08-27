@@ -112,3 +112,15 @@ class ItemDetail(DetailView):
         context['accessories_subcategories'] = accessories_subcategories
 
         return context
+
+
+def register(request):
+    collections = Collection.objects.all()
+    context = {'collections': collections}
+    return render(request, template_name='essense/registration.html', context=context)
+
+
+def login(request):
+    collections = Collection.objects.all()
+    context = {'collections': collections}
+    return render(request, template_name='essense/login.html', context=context)

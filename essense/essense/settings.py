@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'ckeditor',
     'cart.apps.CartConfig',
-    'account.apps.AccountConfig',
     'rest_framework',
 ]
 
