@@ -12,6 +12,6 @@ urlpatterns = [
     path('shop/brand/<slug:slug>/', ShopByBrand.as_view(), name='shop_brand'),
     path('shop/<slug:slug>/', ItemDetail.as_view(), name='single_product'),
     path('checkout', checkout, name='checkout'),
-    path('register', register, name='register'),
-    path('login', login, name='login'),
+    path('register', RegisterFormView.as_view(), name='register'),
+    # path('login', login, name='login'),
 ]

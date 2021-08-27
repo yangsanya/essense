@@ -3,6 +3,8 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.base import View
 from django_filters.views import FilterView
 from django.http import HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import FormView
 from .models import *
 from .filters import *
 
@@ -114,13 +116,15 @@ class ItemDetail(DetailView):
         return context
 
 
-def register(request):
-    collections = Collection.objects.all()
-    context = {'collections': collections}
-    return render(request, template_name='essense/registration.html', context=context)
+class RegisterFormView(FormView):
+    form_class = UserCreationForm
+    success_url = '/login/'
+    template_name = 'essense/registration.html'
 
+    def form_valid(self, form):
+        form.save()
 
-def login(request):
-    collections = Collection.objects.all()
-    context = {'collections': collections}
-    return render(request, template_name='essense/login.html', context=context)
+        return super(RegisterFormView, self).form_valid(form)
+
+    def form_invalid(self, form):
+        return super(RegisterFormView, self).form_invalid(form)
